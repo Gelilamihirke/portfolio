@@ -1,3 +1,4 @@
+// home
 let words = document.querySelectorAll(".word");
 words.forEach((word)=>{
 	let letters = word.textContent.split("");
@@ -57,3 +58,30 @@ let changeText = ()=>{
 			pointsMarked[i].classList.add('marked');
 		}
 	})
+	//portfolio
+const galleryFilter = document.querySelector(".portfolio-filter"),
+galleryItems = document.querySelectorAll(".portfolio-item");
+
+
+galleryFilter.addEventListener("click", (event) => {
+if (event.target.classList.contains("filter-item")) {
+ 
+  galleryFilter.querySelector(".active").classList.remove("active");
+
+  
+  event.target.classList.add("active");
+
+ 
+  const filterValue = event.target.getAttribute("data-filter");
+
+  
+  galleryItems.forEach((item) => {
+	if (item.classList.contains(filterValue)) {
+	  item.classList.remove("hide");
+	} else {
+	  item.classList.add("hide");
+	}
+  });
+}
+});
+document.getElementById("sen").onclick
