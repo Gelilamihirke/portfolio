@@ -85,3 +85,20 @@ if (event.target.classList.contains("filter-item")) {
 }
 });
 document.getElementById("sen").onclick
+
+document.addEventListener("DOMContentLoaded", function () {
+	document.querySelectorAll(".read-more-btn").forEach(button => {
+		button.addEventListener("click", function (event) {
+			event.preventDefault();
+			let moreText = this.closest(".service-box").querySelector(".more-text");
+
+			if (moreText.style.display === "none" || moreText.style.display === "") {
+				moreText.style.display = "inline";
+				this.textContent = "Read Less";
+			} else {
+				moreText.style.display = "none";
+				this.textContent = "Read More";
+			}
+		});
+	});
+});
